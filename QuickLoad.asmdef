@@ -1,3 +1,22 @@
-﻿{
-  "name": "QuickLoad"
+{
+    "name": "QuickLoad",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.multiplayer.playmode",
+            "expression": "2.0.0",
+            "define": "QUICKLOAD_MPPM"
+        }
+    ],
+    "noEngineReferences": false
 }

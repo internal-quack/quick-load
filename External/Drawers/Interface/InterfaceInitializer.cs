@@ -1,5 +1,3 @@
-#if UNITY_EDITOR
-
 using System;
 using System.Linq;
 using System.Reflection;
@@ -87,5 +85,3 @@ namespace QuickLoad.Drawers.Interface {
          static bool IsStruct(Type type) => type.IsValueType && !type.IsEnum;    
     }
 }
-
-#endif

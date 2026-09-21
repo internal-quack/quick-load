@@ -1,6 +1,4 @@
-﻿#if UNITY_EDITOR
-
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEditor.Toolbars;
 using UnityEngine;
 
@@ -27,5 +25,3 @@ namespace QuickLoad.Editor
         }
     }
 }
-
-#endif

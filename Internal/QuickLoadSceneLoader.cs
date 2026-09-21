@@ -1,6 +1,4 @@
-﻿#if UNITY_EDITOR
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -70,5 +68,3 @@ namespace QuickLoad
         }
     }
 }
-
-#endif

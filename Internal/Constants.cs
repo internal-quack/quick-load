@@ -12,7 +12,7 @@
         #region Settings Window
 
             // Sections
-            internal const string EditorTitle = "Editor";
+            internal const string EditorTitle = "Quick Load";
             internal const string OptionsSection = "Options";
             internal const string ScenesSection = "Scenes";
             internal const string NetworkSection = "Network";
