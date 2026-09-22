@@ -4,9 +4,9 @@ using Unity.Multiplayer.PlayMode;
 
 namespace QuickLoad
 {
-    public static class PlayerContext
+    internal static class PlayerContext
     {
-        public static bool IsCloneEditor
+        internal static bool IsCloneEditor
         {
             get
             {
@@ -15,6 +15,42 @@ namespace QuickLoad
 #else
                 return false;
 #endif
+            }
+        }
+        
+        internal static bool IsAssigned => IsClient || IsHost;
+
+        internal static bool IsHost
+        {
+            get
+            {
+#if QUICKLOAD_MPPM
+                foreach (string tag in CurrentPlayer.Tags)
+                {
+                    if (string.Equals(tag, Constants.HostTag, System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+#endif
+                return false;
+            }
+        }
+        
+        internal static bool IsClient
+        {
+            get
+            {
+#if QUICKLOAD_MPPM
+                foreach (string tag in CurrentPlayer.Tags)
+                {
+                    if (string.Equals(tag, Constants.ClientTag, System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+#endif
+                return false;
             }
         }
     }

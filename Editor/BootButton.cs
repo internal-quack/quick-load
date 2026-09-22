@@ -4,15 +4,13 @@ using UnityEngine;
 
 namespace QuickLoad.Editor
 {
-    public static class BootButton
+    internal static class BootButton
     {
         const string ElementId = "QuickLoad/Play Button";
         const string ContentTooltip = "Custom Editor Loader\nPlay";
         const string IconName = "PlayButton";
 
-        [MainToolbarElement(ElementId,
-            defaultDockPosition = MainToolbarDockPosition.Middle,
-            defaultDockIndex = 0)]
+        [MainToolbarElement(ElementId, defaultDockPosition = MainToolbarDockPosition.Middle, defaultDockIndex = 0)]
         static MainToolbarElement CreateBootButton()
         {
             Texture2D icon = EditorGUIUtility.IconContent(IconName).image as Texture2D;
@@ -21,7 +19,7 @@ namespace QuickLoad.Editor
 
         static void OnButtonClicked()
         {
-            QuickLoadService.StartPlayMode();
+            QuickLoadLifecycle.StartPlayMode();
         }
     }
 }

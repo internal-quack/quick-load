@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -17,17 +18,14 @@ namespace QuickLoad
             LoadSequence(pathsToLoad);
         }
 
-        internal static void LoadInitAndScenes(string initScenePath, IReadOnlyList<string> scenePaths)
+        internal static void LoadSceneAsync(string scenePath, Action onComplete = null)
         {
-            List<string> pathsToLoad = FilterPaths(scenePaths, initScenePath);
-
             LoadSceneParameters initParameters = new LoadSceneParameters(LoadSceneMode.Single);
-            AsyncOperation initOperation = EditorSceneManager.LoadSceneAsyncInPlayMode(initScenePath, initParameters);
+            AsyncOperation initOperation = EditorSceneManager.LoadSceneAsyncInPlayMode(scenePath, initParameters);
 
             initOperation.completed += _ =>
             {
-                if (pathsToLoad.Count > 0)
-                    LoadSequence(pathsToLoad);
+                onComplete?.Invoke();
             };
         }
 

@@ -4,5 +4,5 @@ using UnityEngine;
 namespace QuickLoad.Drawers
 {
     [AttributeUsage(AttributeTargets.Field)]
-    internal class ShowInterfaceAttribute : PropertyAttribute { }
+    internal sealed class ShowInterfaceAttribute : PropertyAttribute { }
 }

@@ -18,9 +18,10 @@ MonoBehaviour:
   InitScenePath: Assets/Scenes/Boot.unity
   ScenesToLoadPath: []
   NetworkLoader:
-    rid: -2
+    rid: 7799133340810870882
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 7799133340810870882
+      type: {class: PurrQuickLoad, ns: External.PurrNet, asm: QuickLoad.PurrNet}
+      data: 
