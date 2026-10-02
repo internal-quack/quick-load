@@ -53,5 +53,12 @@ namespace QuickLoad
                 return false;
             }
         }
+        
+        internal static int GetEditorWindows()
+        {
+#if QUICKLOAD_MPPM
+            return 2;
+#endif
+        }
     }
 }

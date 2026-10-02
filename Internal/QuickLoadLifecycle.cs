@@ -53,6 +53,8 @@ namespace QuickLoad
         {
             if (PlayerContext.IsCloneEditor)
             {
+                
+                
                 QuickLoadSceneLoader.LoadSceneAsync(config.InitScenePath, () =>
                 {
                     Utility.ClearConsole();
